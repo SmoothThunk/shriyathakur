@@ -1,0 +1,19 @@
+
+Bubs Site README
+
+
+## Pages On Bub's Site
+
+- Main/Introduction
+	- Should contain name, description, and picture of Bub.
+- Resume
+- Publications
+- Grants
+- News
+- Hobbies/Links to other stuff
+
+At the bottom, there should be a get in touch section.
+
+## Architecture
+Hosted on GitHub pages. Static site written in html/css.
+
