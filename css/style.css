@@ -91,3 +91,47 @@ p {
 	text-align: justify;
 	margin: 0px
 }
+
+.news-item {
+    margin-bottom: 20px;
+}
+
+.news-item hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.news-item p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.news-item h3 {
+    font-size: 20px; 
+    font-weight: bold;
+    margin: 0;
+}
+
+.teaching-item {
+    margin-bottom: 20px;
+}
+
+.teaching-item h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.teaching-item hr {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.teaching-item p {
+    margin: 10px 0;
+}
+
+.teaching-item ul {
+    margin-left: 20px;
+}
