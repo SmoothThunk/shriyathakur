@@ -135,3 +135,15 @@ p {
 .teaching-item ul {
     margin-left: 20px;
 }
+
+.projects-item p {
+	margin: 0;
+	font-size: 16x;
+}
+
+.projetcs-item h3 {
+    font-size: 20px; 
+    font-weight: bold;
+    margin: 0;
+}
+
