@@ -147,3 +147,24 @@ p {
     margin: 0;
 }
 
+.desc-with-icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;              /* space between text and icon */
+}
+
+.desc-with-icon p {
+  margin: 0;
+  flex: 1;                /* take remaining width */
+}
+
+.paper-icon {
+  text-decoration: none;
+  font-size: 1.6rem;      /* adjust size to taste */
+  line-height: 1;
+}
+
+.paper-icon:hover {
+  opacity: 0.8;
+}
+
