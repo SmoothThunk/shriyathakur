@@ -159,12 +159,27 @@ p {
 }
 
 .paper-icon {
-  text-decoration: none;
-  font-size: 1.6rem;      /* adjust size to taste */
-  line-height: 1;
+    font-size: 42px;
+    color: #d32f2f; /* red */
+    margin-left: 10px;
+    text-decoration: none;
 }
 
 .paper-icon:hover {
-  opacity: 0.8;
+    color: #000000;
+}
+
+#content {
+    counter-reset: project-counter;
+}
+
+.projects-item h3 {
+    counter-increment: project-counter;
+}
+
+.projects-item h3::before {
+    content: counter(project-counter) ". ";
+    font-weight: bold;
+    margin-right: 6px;
 }
 

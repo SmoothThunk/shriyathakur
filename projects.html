@@ -5,6 +5,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 	</head>
 	<body>
 		<div id="main">
@@ -21,33 +23,67 @@
 				</div>
 			</div>
 			<div id="content" class="container">
-                <h1>Description of Projects</h1>
+                <h1>Projects</h1>
+				<p>A description of my ongoing and past projects can be found below</p>
                 <hr>
 
 				<div class="projects-item">
-                <h3>Formalizing Zero Knowledge Proofs in EasyCrypt</h3>
-                <hr>
-                <div class="desc-with-icon">
+				<h3>Pint: A small trusted kernel with dependent intersections, unions, and index erasure</h3>
+				
+				<p> A compact, syntax-directed calculus equipped with a bidirectional type checker supporting dependent intersection and union types, 
+					subtyping, and explicit coercions. The system incorporates index and coercion erasure to ensure that program equivalence is preserved at runtime, 
+					while maintaining soundness and compatibility with an implicit, bidirectional checking discipline. Finally, we generalize the framework to a 
+					quantitative resource setting, following McBride’s graded type theory, allowing Pint’s irrelevance and erasure mechanisms to be expressed via 
+					graded quantities. This subsumes ad-hoc erasure techniques and enables principled, resource-aware typing within the calculus</p>
+				
+				</div>
+
+				<div class="projects-item">
+				<h3>Pint on the Rocqs</h3>
+				<p> Aims to mechanize the complete Pint calculus in Rocq, including dependent intersection and union types, 
+					subtyping, and coercions. The project formalizes Pint within a small, verifiable kernel, quantifying proof size, 
+					isolating axioms, and ensuring that the trusted computing base remains minimal. 
+					In addition, we develop a domain-specific language (DSL) for embedding imperative and object-oriented programs into the mechanization, 
+					enabling practical program verification within the formalized system.</p> 
+				</div>
+
+				<div class="projects-item">
+				<h3>Composition of Sigma Protocols</h3>
+				<p> TBD</p> 
+				</div>
+
+				<div class="projects-item">
+                <h3>Interactive Zero Knowledge Proofs for Quadratic Residues in EasyCrypt</h3>
                  <p>
-                    This project explores zero-knowledge proofs (ZKPs), cryptographic protocols that allow a prover to convince a verifier of the truth of a statement without revealing any additional information. We focused on an interactive Σ-protocol based on the quadratic residue problem, formalizing its three core properties: completeness, soundness, and zero-knowledge. Using the EasyCrypt proof assistant, we developed both informal “pen-and-paper” proofs and machine-checked formalizations, analyzing the extent to which our implementation upheld these security guarantees.
+                    Zero knowledge proofs (ZKP) have gained popularity recently due to their ability to protect data while also being efficient.
+					Interractive ZKP's allow a prover to convince a verifier about the validy of some statement without revealing any meaningful information
+					beyond the truth of the statement itself. In this project, we studied a Sigma-protocol for quadratic residues and formalized its security 
+					properties in the EasyCrypt proof assistant. We provided machine-checked proofs of completeness, soundness, and honest-verifier zero-knowledge 
+					within a game-based framework. A more detailed report can be found
+					<a href="EasyZKP.pdf" target="_blank" rel="noopener" class="paper-link"> here
+                	<i class="fa-solid fa-file-pdf"></i>
+                	</a>
+
                 </p>
-                <a href="EasyZKP.pdf" target="_blank" rel="noopener" class="paper-icon" aria-label="Read the paper (PDF)">
-                <i class="fa-regular fa-file-pdf"></i>
-                </a>
-                </div>
             </div>
 
 
+
 				<div class="projects-item">
-					<h3>RLS in Databases</h3>
-					<hr>
-					<p></p>
+					<h3>Row Level Security in Databases</h3>
+					<p>This project implements Row-Level Security (RLS) for a SQLite database using Haskell and the LIO (Labeled IO) library for 
+						information-flow control. We model database tables as Haskell data types and associate each row with dynamically constructed 
+						DCLabels encoding secrecy and integrity policies. Security is implemented in a secure database layer that extends 
+						basic database operations with label-based checks, ensuring that data flows only when permitted by the canFlowTo relation. 
+						The system supports secure insertion, querying, and deletion of customer records, with multiple versions exploring role-based 
+						access control through labels representing administrators and regular users. Serialization and deserialization of labels enable 
+						persistent storage in SQLite, and prepared statements are used to safely interface between Haskell and SQL. This work 
+						demonstrates how fine-grained information-flow control using Haskell LIO can be used to enforce security policies in databases.</p> 
 				</div>
 				
 				<div class="projects-item">
-					<h3>Minimalistic Interpreter</h3>
-					<hr>
-					<p></p>
+					<h3>Interpreter</h3>
+					<p></p> <hr>
 				</div>
 
                 <div class="projects-item">
