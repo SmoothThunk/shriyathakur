@@ -28,6 +28,65 @@
                 <hr>
 
 				<div class="projects-item">
+    <h3>Mixed-Precision Floating Point in Lean 4</h3>
+    <p>
+	ML training increasingly relies on narrow floating point formats (fp8, bf16) for performance,
+	but their rounding and overflow behavior is subtle and poorly specified. Having these semantics
+	mechanized in a proof assistant means we can eventually prove error bounds — e.g.,
+	that a mixed-precision matmul accumulation in fp8 --> fp32 stays within a known ULP distance of the
+	full-precision result. I contributed the complete mixed-precision floating point subsystem to
+	<a href="https://github.com/leanprover/TensorLib">TensorLib</a>, Lean's tensor library
+	for verified numerical computing. My work adds IEEE 754 floating point formats across
+	five PRs (~3,600 LOC), building up from the encoding layer through type promotion to
+	PBT including:
+    </p>
+    <ul>
+      <li>
+        <strong>Bit-exact encoders/decoders</strong> for float16, bfloat16, fp8_e4m3, fp8_e5m2, and
+        fp8_e3m4 — handling subnormal numbers, ±infinity, NaN propagation, and round-to-nearest-even
+        tie-breaking. Each encoder is verified against Google's <code>ml_dtypes</code> reference
+        implementation via compile-time <code>#guard</code> checks (~200 across the codebase).
+      </li>
+      <li>
+        <strong>A 16-dtype type promotion lattice</strong> — the <code>join</code> function that
+        determines the result type when two different dtypes interact (e.g., what happens when you add
+        an fp8 tensor to a float32 tensor). This includes lossless cast analysis, commutativity
+        guarantees, and deliberate divergences from NumPy where NumPy gets it wrong (e.g.,
+        <code>join(e4m3, e3m4)</code> returns <code>none</code> rather than silently overflowing).
+      </li>
+      <li>
+        <strong>Overflow saturation semantics</strong> for cross-dtype casts — inf/NaN handling,
+        per-dtype integer saturation bounds, and unsigned wrapping behavior matching NumPy's casting
+        rules.
+      </li>
+      <li>
+        <strong>Property-based testing</strong> using Lean 4's <code>Plausible</code> framework:
+        round-trip correctness (encode → decode → encode), arithmetic commutativity for each fp
+        format, join commutativity across all dtype pairs, and cast-round-trip verification.
+      </li>
+      <li>
+        <strong>Mixed-precision tensor operations</strong> — matmul, dot product, and element-wise
+        arithmetic that correctly promote operands through the cast graph before computation.
+      </li>
+    </ul>
+
+    <h3>Challenges:</h3>
+    <p>
+      The fp8 formats are tricky. fp8_e4m3 and e3m4 trade off range vs. precision (e4m3 max
+      is 448, e3m4 max is 15.5), and each format has different NaN/infinity conventions (e4m3fn has no
+      infinity, e5m2 does, e3m4 does). Getting round-to-nearest-even correct at the boundary between
+      subnormal and normal numbers, and at the overflow edge where double-rounding through fp32 can
+      disagree with a single-precision round, required careful bit-level reasoning validated against
+      the reference.
+
+    </p>
+
+    <p>
+     <a href="https://smooththunk.github.io/TensorLib-Timeline-Visual/" target="_blank"> 📊  </a>
+    </p>
+  </div>
+
+				<div class="projects-item">
 				<h3>Pint: A small trusted kernel with dependent intersections, unions, and index erasure</h3>
 				
 				<p> A compact, syntax-directed calculus equipped with a bidirectional type checker supporting dependent intersection and union types, 
