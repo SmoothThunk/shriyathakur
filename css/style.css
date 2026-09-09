@@ -236,3 +236,17 @@ p {
 .current-research strong {
   font-weight: 600;
 }
+
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skills-table td {
+  padding: 4px 12px 4px 0;
+  vertical-align: top;
+}
+
+.skills-table td:first-child {
+  width: 180px;
+}
