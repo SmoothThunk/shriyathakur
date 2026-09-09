@@ -215,3 +215,24 @@ p {
 	font-style: italic
 }
 
+.current-research {
+  margin-top: 2rem;
+}
+
+.current-research h2 {
+  margin-bottom: 0.75rem;
+}
+
+.current-research ul {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.current-research li {
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.current-research strong {
+  font-weight: 600;
+}
