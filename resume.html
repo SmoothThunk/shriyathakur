@@ -30,9 +30,17 @@
 				<h2>Education</h2>
 				<hr>
 				<ul>
-					<li><strong>Ph.D.</strong>, Computer Science, University of Massachusetts Lowell (2024 - Present) <span class="location"><a href="https://pauldownen.com" target="blank">Dr. Paul Downen </a></span> </li>
-					<li><strong>M.S.</strong>, Computer Science, Boston University (2023 - 2024) <span class="location"><a href="https://alleystoughton.us" target="blank">Dr. Alley Stoughton</a></span></li> 
-					<li><strong>B.S.</strong>, Mathematics and Computer Science, UML (2019 - 2023)</li>
+					<li> <strong>Ph.D. in Computer Science with Computational Mathematics</strong>
+						<span class="location">2024 – Present</span><br>
+						University of Massachusetts Lowell<br>
+						<span class="meta">
+							Advisors: <a href="https://pauldownen.com" target="_blank">Paul Downen</a> and <a href="https://www.uml.edu/profile/tibor_beke/" target="_blank">Tibor Beke</a></span>
+   					</li> <br>
+					<li> <strong>M.S. in Computer Science</strong> <span class="location">2023 – 2024</span><br> Boston University<br>
+						<span class="meta"> Advisor: <a href="https://alleystoughton.us" target="_blank">Alley Stoughton</a> </span>
+					</li>
+					<br>
+					<li> <strong>B.S. in Mathematics and Computer Science</strong> <span class="location">2019 – 2023</span><br> University of Massachusetts Lowell</li>
 				</ul>
 
 				<h2>Skills</h2>
@@ -48,14 +56,20 @@
 					</tr>
 				</table>
 
-				<h2> Research Internships</h2>
-				<hr>
+	
+
+				<h2>Research Internships</h2><hr>
 				<ul>
-					<li><strong>Applied Scientist Intern @ Amazon Web Services (Annapurna ML)</strong> <span class="location">Seattle, WA</span></li>
-					<p class="meta">Mentors: <a href="https://github.com/seanmcl">Sean McLaughlin</a> & <a href="https://joonwon.net/c/">Joonwon Choi</a></p>
-					Implement bit-exact IEEE 754 support (float16, bfloat16, fp8_e4m3/e5m2/e3m4) in TensorLib with round-to-nearest-even, 
-					a dtype promotion lattice, and overflow saturation casts.Verified against ml_dtypes via PBT. Also mechanized error bounds 
-					in mixed precision for Tensor operations.
+					<li> <strong>Applied Scientist Intern, AWS Annapurna Labs — Neuron Compiler</strong>
+						<span class="location">Seattle, WA · Summer 2026</span><br>
+						<span class="meta"> Mentors: <a href="https://github.com/seanmcl" target="_blank">Sean McLaughlin</a> and <a href="https://joonwon.net/c/" target="_blank">Joonwon Choi</a></span>
+
+				<ul>
+					<li> Mechanized low-precision floating-point formats in Lean, including FP16, BF16, and several FP8 formats.</li>
+					<li> Formalized type promotion and mixed-precision tensor operations, and verified outputs against <code>ml_dtypes</code> and <code>gfloat16</code> using property-based testing.</li>
+					<li> Mechanized error bounds for mixed-precision computations to reason about numerical error introduced by lower-precision floating-point formats during quantization.</li>
+				</ul>
+				</li>
 				</ul>
 
 
