@@ -32,12 +32,12 @@
 	ML training increasingly relies on narrow floating point formats (fp8, bf16) for performance,
 	but their rounding and overflow behavior is subtle and poorly specified. Having these semantics
 	mechanized in a proof assistant means we can eventually prove error bounds — e.g.,
-	that a mixed-precision matmul accumulation in fp8 --> fp32 stays within a known ULP distance of the
+	that a mixed-precision matmul accumulation in fp8 --> fp32 stays within a known distance of the
 	full-precision result. I contributed the complete mixed-precision floating point subsystem to
-	<a href="https://github.com/leanprover/TensorLib">TensorLib</a>, Lean's tensor library
+	<a href="https://github.com/leanprover/TensorLib">TensorLib</a>, Lean's library
 	for verified numerical computing. My work adds IEEE 754 floating point formats across
 	five PRs (~3,600 LOC), building up from the encoding layer through type promotion to
-	PBT including:
+	mixed precision reasoning including:
     </p>
     <ul>
       <li>
@@ -67,9 +67,13 @@
         <strong>Mixed-precision tensor operations</strong> — matmul, dot product, and element-wise
         arithmetic that correctly promote operands through the cast graph before computation.
       </li>
+	  <li>
+		<strong>Error bounds</strong>- Mechanized a generic framework for worst-case
+		error bounds in rounding operations, addition, and in multiplication.
+	  </li>
     </ul>
 
-    <h3>Challenges:</h3>
+    <!-- <h3>Challenges:</h3>
     <p>
       The fp8 formats are tricky. fp8_e4m3 and e3m4 trade off range vs. precision (e4m3 max
       is 448, e3m4 max is 15.5), and each format has different NaN/infinity conventions (e4m3fn has no
@@ -78,7 +82,7 @@
       disagree with a single-precision round, required careful bit-level reasoning validated against
       the reference.
 
-    </p>
+    </p> -->
 
     <p>
      <a href="https://smooththunk.github.io/TensorLib-Timeline-Visual/" target="_blank"> 📊  </a>
@@ -140,22 +144,6 @@
 					can be found <a href="ShriyaThakur_FinalPresentation_FormalMethods.pptx">🎞 here</a></p> 
 				</div>
 				
-				<div class="projects-item">
-					<h3>Interpreter</h3>
-					<p></p> 
-				</div>
-
-				<div class="projects-item">
-					<h3>Blackjack</h3>
-					<p></p> 
-				</div>
-
-                <div class="projects-item">
-					<h3> Red Black Trees</h3>
-					<hr>
-					<p></p>
-				</div>
-
 			</div>
 			<div id="contact-wrapper">
 				<div id="contact" class="container">
